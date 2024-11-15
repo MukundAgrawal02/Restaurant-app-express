@@ -6,6 +6,7 @@ const getAllUsersController = async (req, res) => {
     const users = await userModel.find({});
     res.status(200).send({
       success: true,
+      count: users.length,
       message: "All users retrieved successfully",
       users
     });
